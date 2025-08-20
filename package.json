@@ -1,0 +1,57 @@
+{
+  "name": "@sguez/d365-event-decorators",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/core/index.js",
+  "types": "dist/core/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "release": "pnpm run build && npm publish --scope=@sguez --access public"
+  },
+  "keywords": [],
+  "author": "Sofiane GUEZZAR",
+  "license": "MIT",
+  "packageManager": "pnpm@10.12.1",
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@types/xrm": "^9.0.87",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@sguez/d365-form-helpers": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SofianeGUEZZAR/d365-event-decorators.git"
+  },
+  "exports": {
+    "./DecoratorProfiler": {
+        "types": "./dist/core/DecoratorProfiler.d.ts",
+        "default": "./dist/core/DecoratorProfiler.js"
+    },
+    "./Decorators": {
+        "types": "./dist/core/Decorators.d.ts",
+        "default": "./dist/core/Decorators.js"
+    },
+    "./Dispatcher": {
+        "types": "./dist/core/Dispatcher.d.ts",
+        "default": "./dist/core/Dispatcher.js"
+    },
+    "./HandlerBase": {
+        "types": "./dist/core/HandlerBase.d.ts",
+        "default": "./dist/core/HandlerBase.js"
+    },
+    "./Registry": {
+        "types": "./dist/core/Registry.d.ts",
+        "default": "./dist/core/Registry.js"
+    },
+    "./Types": {
+        "types": "./dist/core/Types.d.ts",
+        "default": "./dist/core/Types.js"
+    },
+    ".": {
+      "types": "./dist/core/index.d.ts",
+      "default": "./dist/core/index.js"
+    }
+  }
+}
