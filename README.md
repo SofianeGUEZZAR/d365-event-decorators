@@ -50,7 +50,7 @@ Events are based on the official Microsoft documentation. For more information, 
 Install as an internal dependency (example with npm):
 
 ```bash
-npm install --save-dev d365-event-decorators
+npm install --save-dev @sguez/d365-event-decorators
 ```
 
 ### TypeScript configuration
@@ -79,8 +79,8 @@ Keep your business logic in TypeScript, compile to a single (minified) JS file f
 3. Instantiate the handler in your form `onLoad` function and pass the execution context.
 
 ```ts
-import { FormEventHandlerBase } from "d365-event-decorators/HandlerBase";
-import D365Event from "d365-event-decorators/Decorators";
+import { FormEventHandlerBase } from "@sguez/d365-event-decorators/HandlerBase";
+import D365Event from "@sguez/d365-event-decorators/Decorators";
 
 class ContactFormHandler extends FormEventHandlerBase {
   @D365Event.Form.OnLoad()
