@@ -50,18 +50,20 @@ Events are based on the official Microsoft documentation. For more information, 
 Install as an internal dependency (example with npm):
 
 ```bash
-npm install --save-dev @sguez/d365-event-decorators
+npm install @sguez/d365-event-decorators @sguez/d365-form-helpers
 ```
 
 ### TypeScript configuration
 
-It is recommended to set the following in your `tsconfig.json`:
+You need to set the following in your `tsconfig.json`:
 
 ```json
 {
   "compilerOptions": {
-    "moduleResolution": "NodeNext",
-    "module": "NodeNext"
+    "moduleResolution": "NodeNext", // optional
+    "module": "NodeNext", // optional
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   }
 }
 ```

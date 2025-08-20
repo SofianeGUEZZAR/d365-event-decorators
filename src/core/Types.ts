@@ -85,7 +85,7 @@ export type EventDetail = GlobalEventDetail | ComponentEventDetail;
 
 export type FormEventDetails = {
     functionName: string;
-    formTypes?: XrmEnum.FormType[];
+    formTypes?: XrmEnum.FormType[] | undefined;
     events: EventDetail[];
 }
 

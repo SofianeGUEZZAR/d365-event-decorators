@@ -1,5 +1,5 @@
 import { DecoratorProfiler } from "./DecoratorProfiler";
-import { EventDetail, FormEventDetails, isComponentEventDetail } from "./Types";
+import { type EventDetail, type FormEventDetails, isComponentEventDetail } from "./Types";
 
 
 const eventRegistry = new Map<Function, FormEventDetails[]>();
@@ -18,12 +18,14 @@ export function upsertFunctionEvent<T extends EventDetail>(constructor: Function
     const formEvents: FormEventDetails[] = getFormEvents(constructor);
     let formEvent = formEvents.find(event => event.functionName === functionName);
 
+    const formEventDetail: FormEventDetails = {
+        events: eventDetail ? [eventDetail] : [],
+        functionName,
+        formTypes
+    };
+
     if (!formEvent) {
-        formEvents.push({
-            events: eventDetail ? [eventDetail] : [],
-            functionName,
-            formTypes
-        });
+        formEvents.push(formEventDetail);
     }
     else {
         if (eventDetail) {
